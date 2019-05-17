@@ -21,15 +21,21 @@ docker-compose build
 ```
 docker-compose -f docker-compose.yml up 
 ```
+
+## Structure
+
 # Output
 The output will be directed on your browser at: 
 http://0.0.0.0:5090/
 
 A drop down menu allows the user to select one of the three .wav audio signals that are available.
+```
+Channel_1 :: ch-1l.wav
 
->> Channel_1 :: ch-1l.wav
->> Channel_2 :: ch-2l.wav
->> Channel_3 :: ch-3l.wav
+Channel_2 :: ch-2l.wav
+
+Channel_3 :: ch-3l.wav
+```
 By default Channel_1 is displayed. 
 
 By simply selecting and submitting any other Channl the figures will be generated and displayed for the desired audio signal.
