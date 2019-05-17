@@ -24,23 +24,23 @@ docker-compose -f docker-compose.yml up
 
 ## Structure
 
-**app.py**	This is the main file that is invoked to start up the development server. 
+**./app.py**	This is the main file that is invoked to start up the development server. 
 
-**requirements.txt**	This file lists all of the Python packages that your app depends on. 
+**./requirements.txt**	This file lists all of the Python packages that your app depends on. 
 
-**aux.py** This file contains a series of auxiliary functions needed to run and execute app.py
+**./aux.py** This file contains a series of auxiliary functions needed to run and execute app.py
 
-**ch-1l.wav, ch-2l.wav, ch-3l.wav** Audio files that are going to be displayed.
+**./ch-1l.wav, ./ch-2l.wav, ./ch-3l.wav** Audio files that are going to be displayed.
 
-**data.json** json file containing values to be displayed on top of ch-#l.wav audio files.
+**./data.json** json file containing values to be displayed on top of ch-#l.wav audio files.
 
-**database.py** Database in which json values are loaded before being plotted.
+**./database.py** Database in which json values are loaded before being plotted.
 
 *NOTE: In this example databases are not used and json values are loaded and processed into pandas DataFrames.*
 
-**docker-compose.yml** Docker compose file defining services, networks and volumes.
+**./docker-compose.yml** Docker compose file defining services, networks and volumes.
 
-**env_file** Set environment variables in the docker container.
+**./env_file** Set environment variables in the docker container.
 
 **./templates/index.html** html file containing css style configurations to design the final website using the figs passed from app.py
 
