@@ -1,0 +1,13 @@
+Flask
+Flask-Cors
+flask_sqlalchemy
+SQLAlchemy
+greenlet
+eventlet
+requests
+numpy
+librosa
+pandas
+bokeh == 1.1.0
+psycopg2
+matplotlib

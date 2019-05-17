@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>HyperSurfaces Data Visualisation</title>
+     <!--Import bokeh styles (NOTE: Be sure that bokeh == 1.1.0 is installed / check ../requirements.txt)-->
+    <link
+      href="http://cdn.pydata.org/bokeh/release/bokeh-1.1.0.min.css"
+      rel="stylesheet" type="text/css">
+    <link
+      href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.1.0.min.css"
+      rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Arimo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
+
+    <!--Define some css styles to be used ...-->
+    <style>
+      .container {
+        overflow: hidden;
+        background-color: #cfe6f3;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        align-items: center;
+        margin: auto;
+        font-family: 'Arimo', sans-serif;
+      }
+      
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.5s;
+        padding: 20px;
+        border-radius: 5px;
+        border: 1px #000000;
+        margin: auto;
+        background-color: white;
+        max-width: 800px;
+      }
+      
+      .card:hover {
+          box-shadow: 0 16px 16px 0 rgba(0,0,0,0.4);
+      }
+
+      /* Style the buttons */
+    
+      .graph {
+        display : block;
+        margin : 0 auto;
+        text-align: left;
+        width: 800px;
+      }
+
+      p {
+        font-size: 16px;
+        color: #000000;
+      }
+      
+      h1 {
+        text-align: center;
+        text-transform: uppercase;
+        color:#000000;
+        font-size: 24px;
+        text-decoration: bold;
+      }
+      
+      h2 {
+        text-align: left;
+        text-decoration: bold;
+        text-transform: uppercase;
+        color: #ffffff;
+        font-size: 18px;
+        font-family: 'Arimo', sans-serif;
+      }
+    
+      h3 {
+        text-align: center;
+        text-decoration: bold;
+        text-transform: uppercase;
+        color: #000000;
+        font-size: 18px;
+        font-family: 'Arimo', sans-serif;
+        font-weight: 700;
+      }
+
+      h4 {
+        text-align: center;
+        color: #ffffff;
+        font-size: 20px;
+        font-family: 'Crimson Text', serif;
+        font-weight: lighter;
+        letter-spacing: 1.08px;
+      }
+    
+    </style>
+
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-1.1.0.min.js"></script>
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.1.0.min.js"></script>
+  </head>
+
+
+  <body style="background-color:#000000;">
+  <img src="https://static1.squarespace.com/static/5bc0bfd6f4755a7fa4e8c287/t/5bd33692e79c70d17cac36dc/1540568727258/logo27.png?format=1000w" alt="Hypersurfaces" height="80">
+  <h2>Javi Fernandez</h2>
+    <div class="container">
+    <br>
+    <div class="card">
+        <h3> Audio Signal Visualisation</h3>
+        <p> Please <b>select</b> an option from the drop down menu to display a visualisation. <br>Then, press <b>submit</b>.</p> 
+    <form action="/">
+    <select name="feature_name">
+      {% for feature in feature_names %}
+        {% if feature == current_feature_name %}
+          <option selected value="{{ feature }}">{{ feature }}</option> 
+        {% else %} 
+          <option value="{{ feature }}">{{ feature }}</option> 
+        {% endif %}
+      {% endfor %}
+    </select>
+    
+    <input type="submit">
+    </form>
+    <div class="graph">
+
+    <!--  Output the bokeh script and div section via the safe tag 
+       to ensure that we are safely rendering and executing within the browser.-->
+    {{ script|safe }}
+    {{ div|safe }}
+
+  </div>
+  </div>
+<br>
+</div>
+
+<!--Footpage text-->
+<h4> Hypersurfaces: seamlessly merging the physical and data worlds. </h4>
+<br>
+</body>
+  
+</html>
+
+<!--end-->
