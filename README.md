@@ -1,5 +1,5 @@
-# Hypersurfaces Software Development by Javi Fernandez
-Repository to work on the Software Development project assigned by Hypersurfaces.
+# Software Development
+Repository to work on a Software Development project to process audio signals.
 
 ## How to run
 
